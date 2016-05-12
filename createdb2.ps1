@@ -20,14 +20,14 @@ function CreateSQLUser([string]$instanceName, [string]$dbName, [string]$dbPasswo
 
 Import-Module SQLPS -DisableNameChecking
  
-'$sqlInstanceName = "localhost"
-'$databaseName = "identitytest"
-'$dbPassword = "Agresso1"
+$sqlInstanceName = "localhost"
+$databaseName = "identitytest"
+$dbPassword = "Agresso1"
 
-'$srvr = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Server -ArgumentList $sqlInstanceName
+$srvr = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Server -ArgumentList $sqlInstanceName
 
 
-'$db = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Database($srvr, $databaseName)
+$db = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Database($srvr, $databaseName)
 $db.Create()
 
 CreateSQLUser -instanceName $sqlInstanceName -dbName $databaseName -dbPassword $dbPassword 
